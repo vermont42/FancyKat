@@ -17,9 +17,6 @@ enum BreedLoader {
     do {
       let (jsonData, _) = try await URLSession.shared.data(from: url)
       let breeds = try JSONDecoder().decode([Breed].self, from: jsonData)
-      for breed in breeds {
-        print(breed.name)
-      }
       return breeds
     } catch {
       return nil
