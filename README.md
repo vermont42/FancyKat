@@ -26,11 +26,11 @@ To grok The Cat API JSON, I used [JSONFormatter](https://jsonformatter.org).
 
 For a first draft of the model, I used [QuickType](https://quicktype.io). I like QuickType's option to be explicit about `CodingKeys` because I have found `JSONDecoder.KeyDecodingStrategy.convertFromSnakeCase` to be unreliable.
 
-## Screenshots
+## Screenshots and GIF
 
-| Browsing | Details |
-| -------- | ------- |
-| ![](img/browse.png) | ![](img/details.png) |
+| Browsing | Details | GIF    |
+| -------- | ------- | ------ |
+| ![](img/browse.png) | ![](img/details.png) | ![](img/FancyKat.gif)
 
 ## Credits
 
