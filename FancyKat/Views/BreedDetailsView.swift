@@ -41,9 +41,11 @@ struct BreedDetailsView: View {
       }
       .frame(width: photoHeightWidth, height: photoHeightWidth)
 
-      Text(breed.description)
-        .font(.body)
-        .padding()
+      ScrollView {
+        Text(breed.description)
+          .font(.body)
+          .padding()
+      }
 
       Spacer()
 
