@@ -3,7 +3,7 @@
 import Foundation
 
 enum BreedLoader {
-  static let apiKey = ""
+  static let apiKey = "live_U8CbSQFvNYln5sJxDqmSMdIDhgIF5lsxMFjH1RwZtWFWd2fyWuAKcqBzZFk7vziE"
 
   static func loadBreeds() async -> [Breed]? {
     if apiKey == "" {
