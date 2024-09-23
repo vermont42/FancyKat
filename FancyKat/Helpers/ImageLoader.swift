@@ -4,6 +4,7 @@ import UIKit
 
 actor ImageLoader {
   private var loaderStatuses: [URL: LoaderStatus] = [:]
+  private let errorImage = UIImage(resource: .error)
 
   private enum LoaderStatus {
     case inProgress(Task<UIImage, Error>)
@@ -11,8 +12,6 @@ actor ImageLoader {
   }
 
   func fetch(_ url: URL) async -> UIImage {
-    let errorImage = UIImage(resource: .error)
-
     if let status = loaderStatuses[url] {
       switch status {
       case .fetched(let image):
@@ -27,8 +26,7 @@ actor ImageLoader {
 
       do {
         let (imageData, _) = try await URLSession.shared.data(from: url)
-        let imageFromNetwork = UIImage(data: imageData)
-        image = imageFromNetwork ?? errorImage
+        image = UIImage(data: imageData) ?? errorImage
       } catch {
         image = errorImage
       }
